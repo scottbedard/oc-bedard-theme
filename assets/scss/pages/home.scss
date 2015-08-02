@@ -1,0 +1,39 @@
+body[data-page="home"] {
+
+    .blogPosts {
+
+        .post {
+            vertical-align: top;
+
+            .inner {
+                background: #fff;
+                opacity: 0.9;
+                padding: 10px;
+                @include transition(opacity);
+
+                p {
+                    border-top: 1px solid #dfdfdf;
+                    padding-top: 10px;
+                    margin: 10px 0;
+                }
+
+                h3 {
+                    @include transition(color);
+                }
+
+                &:hover {
+                    h3 {
+                        color: $header-link-hover;
+                    }
+
+                    opacity: 1;
+                }
+            }
+
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+        }
+    }
+}

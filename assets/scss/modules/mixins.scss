@@ -1,0 +1,28 @@
+//
+// Mixins
+//
+
+// Break points
+@mixin bp($point, $custom: 0) {
+    @if $point == mobile {
+        @media screen and (max-width: #{$bp-tablet - 1}) { @content; }
+    }
+
+    @else if $point == tablet {
+        @media screen and (min-width: $bp-tablet) { @content; }
+    }
+
+    @else if $point == desktop {
+        @media screen and (min-width: $bp-desktop) { @content; }
+    }
+
+    @else if $point == custom {
+        @media screen and (min-width: $custom) { @content; }
+    }
+}
+
+// Transitions
+@mixin transition($properties...) {
+    transition-property: $properties;
+    transition-duration: $transition-duration;
+}

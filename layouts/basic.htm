@@ -1,0 +1,43 @@
+[googleTracker]
+==
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link href="http://fonts.googleapis.com/css?family=Roboto:400,300" rel="stylesheet" type="text/css">
+        <link href="{{ 'assets/dist/style.css'|theme }}" rel="stylesheet" type="text/css">
+    </head>
+    <body data-page="{{ this.page.id }}">
+        <header>
+            <div class="container">
+                <a href="{{ 'home'|page }}" class="me">Scott Bedard</a>
+                <nav>
+                    <ul>
+                        {% spaceless %}
+                            <li><a href="https://github.com/scottbedard">Github</a></li>
+                            <li><a href="{{ 'contact'|page }}">Contact</a></li>
+                        {% endspaceless %}
+                    </ul>
+                    <a
+                        href="javascript:;"
+                        class="mobile-navigation"
+                        data-component="mobile-navigation">
+                        <i class="icon-bars"></i>
+                    </a>
+                </nav>
+            </div>
+        </header>
+        <div class="container">
+            {% page %}
+        </div>
+        {% partial 'ribbon' %}
+        <script type="application/javascript" src="{{ [
+            'assets/js/vendor/prism.js',
+            '@jquery',
+            '@framework',
+            'assets/dist/script.js'
+        ]|theme }}.js"></script>
+        {% component 'googleTracker' %}
+    </body>
+</html>

@@ -1,0 +1,22 @@
+title = "Blog post"
+url = "/blog/:slug"
+layout = "basic"
+is_hidden = "0"
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog/category"
+==
+<article>
+    <div class="header grid row">
+        {% spaceless %}
+            <div class="col t9 title">
+                <h1>{{ blogPost.post.title }}</h1>
+            </div>
+            <div class="col t3 date">
+                {{ blogPost.post.published_at|date('F jS, Y') }}
+            </div>
+        {% endspaceless %}
+    </div>
+    {{ blogPost.post.content_html|raw }}
+</article>

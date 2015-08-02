@@ -1,0 +1,34 @@
+//
+// Grid
+//
+
+.grid.row {
+
+    .col {
+        display: inline-block;
+        padding-bottom: $grid-cell-spacing;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+
+        @include bp(tablet) {
+
+            &:not(:first-of-type) { padding-left: $grid-cell-spacing / 2; }
+            &:not(:last-of-type) { padding-right: $grid-cell-spacing / 2; }
+
+            @for $i from 1 to 12 {
+                &.t#{$i} {
+                    width: #{($i / 12) * 100%};
+                }
+            }
+        }
+
+        @include bp(desktop) {
+            @for $i from 1 to 12 {
+                &.d#{$i} {
+                    width: #{($i / 12) * 100%};
+                }
+            }
+        }
+    }
+}

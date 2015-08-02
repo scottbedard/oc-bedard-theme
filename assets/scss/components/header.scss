@@ -1,0 +1,102 @@
+//
+// Header
+//
+
+header {
+
+    background-color: #fff;
+
+    .container {
+        height: 65px;
+        line-height: 65px;
+        margin-bottom: 15px;
+        position: relative;
+        @include transition(height, line-height);
+
+        @include bp(tablet) {
+            height: 100px;
+            line-height: 100px;
+        }
+    }
+
+    a {
+        color: #000;
+        text-decoration: none !important;
+        text-transform: uppercase;
+        outline: none;
+        @include transition(color);
+
+        &:hover {
+            color: $header-link-hover;
+        }
+
+        &.me {
+            float: left;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        &.mobile-navigation {
+            font-size: 26px;
+            outline: none;
+            padding: 0 15px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+
+            @include bp(tablet) {
+                display: none;
+            }
+        }
+    }
+
+    nav {
+        float: right;
+
+        ul {
+            display: none;
+            border-top: 1px solid #ddd;
+            position: absolute;
+            top: 65px;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                display: block;
+                background-color: #f4f4f4;
+                border-bottom: 1px solid #ddd;
+                line-height: 50px;
+                height: 50px;
+
+                a {
+                    display: block;
+                    padding: 0px 10px;
+                }
+            }
+
+            @include bp(tablet) {
+                border: none;
+                display: inline !important;
+                position: static;
+
+                li {
+                    display: inline-block;
+                    background-color: transparent;
+                    border: none;
+                    line-height: inherit;
+                    height: auto;
+                    padding: 0;
+
+                    &:not(:first-of-type) {
+                        padding-left: 25px;
+                    }
+                }
+            }
+        }
+    }
+}

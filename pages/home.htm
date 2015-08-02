@@ -1,0 +1,24 @@
+title = "Home"
+url = "/"
+layout = "basic"
+is_hidden = "0"
+==
+<?php
+use RainLab\Blog\Models\Post;
+function onStart()
+{
+    $this['blogPosts'] = $this->onGetPosts();
+}
+
+function onGetPosts()
+{
+    $skip = intval(input('skip'));
+
+    return Post::isPublished()->orderBy('published_at', 'desc')->skip($skip)->take(3)->get();
+}
+?>
+==
+
+<div class="blogPosts" data-component="blogPosts">
+    {% partial 'blog/list-row' posts=blogPosts %}
+</div>

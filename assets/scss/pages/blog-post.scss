@@ -1,0 +1,19 @@
+body[data-page="blog-post"] {
+
+    article {
+        background: #fff;
+        opacity: 0.95;
+        padding: 15px;
+
+        .header {
+            border-bottom: 1px solid #dfdfdf;
+
+            .date {
+                @include bp(tablet) {
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+}
