@@ -6,6 +6,8 @@ is_hidden = "0"
 [blogPost]
 slug = "{{ :slug }}"
 categoryPage = "blog/category"
+
+[disqus]
 ==
 <article>
     <div class="header grid row">
@@ -20,3 +22,6 @@ categoryPage = "blog/category"
     </div>
     {{ blogPost.post.content_html|raw }}
 </article>
+<div class="disqus">
+    {% component 'disqus' %}
+</div>

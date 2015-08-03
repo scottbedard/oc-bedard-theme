@@ -6,6 +6,7 @@
                     <div class="inner">
                         <h3>{{ post.title }}</h3>
                         <p class="description">{{ post.excerpt|raw }}</p>
+                        <div class="posted">{{ post.published_at|date('F jS, Y') }}</div>
                     </div>
                 </a>
             </div>
